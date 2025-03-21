@@ -1,0 +1,13 @@
+<form [formGroup]="form" (ngSubmit)="submitForm()">
+    <input formControlName="name" placeholder="სახელი">
+    <input formControlName="email" placeholder="Email">
+    <input formControlName="password" placeholder="პაროლი">
+    <input formControlName="mobileNumber" placeholder="მობილურის ნომერი">
+    <input formControlName="address" placeholder="მისამართი">
+    <button type="submit">გაგზავნა</button>
+</form>
+
+<div *ngIf="alertVisible" class="alert alert-info">
+    <span (click)="closeAlert()" class="close-btn">&times;</span>
+    <pre>{{alertMessage}}</pre>
+</div>
