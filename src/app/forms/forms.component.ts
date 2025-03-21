@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-forms',
@@ -11,7 +12,10 @@ import { FormControl, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
 export class FormsComponent {
 form=new FormGroup({
   name: new FormControl(''),
-  email: new FormControl(''),
+  email: new FormControl('',[
+    Validators.required,
+    Validators.email,
+  ]),
   password: new FormControl(''),
   mobileNumber: new FormControl(''),
   address: new FormControl('') 
