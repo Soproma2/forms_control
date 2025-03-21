@@ -1,6 +1,10 @@
 <form [formGroup]="form" (ngSubmit)="submitForm()">
     <input formControlName="name" placeholder="სახელი">
+    <!-- <input type="email" formControlName="email" placeholder="Email"> -->
     <input type="email" formControlName="email" placeholder="Email">
+    <p *ngIf="form.controls.email.invalid && form.controls.email.touched" class="error">
+        არასწორი ელ.ფოსტის ფორმატი
+    </p>
     <input formControlName="password" placeholder="პაროლი">
     <input formControlName="mobileNumber" placeholder="მობილურის ნომერი">
     <input formControlName="address" placeholder="მისამართი">
